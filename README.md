@@ -41,20 +41,20 @@ The Todo App Backend provides a RESTful API for managing todo tasks. It allows u
 3. ```bash
    npm run dev
 
-##Usage
+## Usage
 Once the server is running, you can use tools like Postman or curl to interact with the API endpoints. Refer to the API Endpoints section for details on available routes and their usage.
 
-##API Endpoints
+## API Endpoints
 
 Auth:
-GET /api/user/login: Login
-POST /api/user/register Register
-GET /api/user/profile My Profile
-GET /api/user/logout Logout
+- GET /api/user/login Login
+- POST /api/user/register Register
+- GET /api/user/profile My Profile
+- GET /api/user/logout Logout
 
 Tasks:
-GET /api/task/getMyTask: Get all tasks
-Update /api/task/:id Update an existing task
-DELETE /api/task/:id Delete task
-PUT /api/tasks/createTask Create new task
+- GET /api/task/getMyTask Get all tasks
+- Update /api/task/:id Update an existing task
+- DELETE /api/task/:id Delete task
+- PUT /api/tasks/createTask Create new task
 
