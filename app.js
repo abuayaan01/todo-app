@@ -8,7 +8,10 @@ import { errormiddleware } from "./middlewares/error.js";
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
+app.use('/uploads', express.static('uploads'));
+
 
 config({
   path: "./data/config.env",
@@ -20,7 +23,7 @@ app.use("/user", userRouter);
 app.use("/task",taskRouter);
 
 app.get("/", (req, res) => {
-  return res.status(200).send("Api connected.");
+  return res.status(200).send("<img src='http://localhost:3000/uploads/profileImage-1708898756749.jpg'/>");
 });
 
 app.listen(process.env.PORT, () => {

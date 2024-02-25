@@ -17,10 +17,15 @@ export const createNewUser = async (req, res) => {
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
+  const imagePath = req.file ? req.file.path.replace(/\\/g, '/') : '';
+
+  const profileImage = imagePath ? `http://localhost:3000/${imagePath}` : '';
+
   const user = new User({
     name,
     email,
     password: hashedPassword,
+    profileImage
   });
 
   try {
